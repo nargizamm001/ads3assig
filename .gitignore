@@ -1,0 +1,12 @@
+### IntelliJ IDEA ###
+.idea/
+*.iml
+out/
+target/
+*.class
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
