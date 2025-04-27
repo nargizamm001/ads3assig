@@ -2,14 +2,13 @@ public class Main {
     public static void main(String[] args) {
         MyHashTable<MyTestingClass, String> table = new MyHashTable<>();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10000; i++) {
             table.put(new MyTestingClass(i), "Value" + i);
         }
 
-        System.out.println("Hash Table Buckets distribution:");
         for (int i = 0; i < 11; i++) {
             int count = 0;
-            var head = getBucketHead(table, i);
+            MyHashTable.HashNode head = getBucketHead(table, i);
             while (head != null) {
                 count++;
                 head = head.next;
@@ -25,9 +24,8 @@ public class Main {
         tree.put(1, "One");
         tree.put(3, "Three");
 
-        System.out.println("\nElements in BST:");
         for (var elem : tree.iterator()) {
-            System.out.println("key: " + elem.getKey() + ", value: " + elem.getValue());
+            System.out.println("key is " + elem.getKey() + " and value is " + elem.getValue());
         }
     }
 
